@@ -4,27 +4,90 @@
    
     <title>Document</title>
 <style>
-    
-</style>
+   * {
+       box-sizing: border-box;
+       margin: 0;
+   } 
 
+   body {
+    border: 10px solid red;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    background: red;
+   }
+   
+   header {
+       color: rgb(255, 142, 142);
+       text-align: center;
+   }
+
+   main {
+      flex: auto;
+      background: rgb(255, 142, 142);
+      padding: 20px;
+      border-radius: 8px;
+      }
+
+    main ul {
+        padding: 0;
+        list-style: none;
+    }
+
+    main li {
+        border-bottom: 1px solid black;
+        padding: 5px 0;
+    }
+
+    footer {
+        display: flex;
+        padding-top: 5px;
+    }
+
+    footer input {
+        flex: auto;]
+        padding: 5px;
+    }
+
+</style>
 </head>
 
 <body>
+    <header>
     <h1>Tarefas</h1>
-    <ul>
-        <li>Estudar HTML</li>
-        <li>Estudor CSS</li>
-        <li>Estudar JS</li>
-    </ul>
+    </header>
+    <main>
+    <ul></ul>
+    </main>
+    <footer>
     <input>
-    <button onclick="add()">Adicionar</button>
+    <button onclick="add()">adicionar</button>
+    </footer>
     <script>
+
+        const tarefas = ['Estudar HTML', 'Estudar CSS', 'Estudar JS']
+        
         function add() {
-            const ul = document.querySelector("ul")
             const input = document.querySelector("input")
             const tarefa = input.value
-            console.log(tarefa)
+            tarefas.push(tarefa)
+            input.value = ""
+            render()
         }
+
+        function render() {
+            const ul = document.querySelector("ul")
+            ul.innerHTML = null
+
+            tarefas.forEach(function (tarefa) {
+                const li = document.createElement("li")
+                li.innerText = tarefa
+                ul.appendChild(li)
+            })
+        }
+            
+        render()
     </script>
 </body>
 
