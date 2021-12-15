@@ -38,9 +38,13 @@
     }
 
     main li {
-        border-bottom: 1px solid black;
-        padding: 5px 0;
-       
+        box-shadow: 5px 5px ;
+        padding: 5px;
+        font-size: larger;
+        background: red;
+        border-radius: 5px;
+        margin-top: 8px;
+        
     }
 
     footer {
@@ -51,8 +55,12 @@
     footer input {
         flex: auto;
         padding: 5px;
-        border-radius: 5px;
+        border-radius: 8px;
         outline: none;
+    }
+
+    footer button {
+        border-radius: 8px;
     }
 
 </style>
@@ -68,10 +76,11 @@
     <footer>
     <input placeholder="Adicionar Tarefa">
     <button onclick="add()">adicionar</button>
+    <button style="font-size:24px"><i class="fa fa-trash"></i></button>
     </footer>
     <script>
 
-        const tarefas = ['Estudar HTML', 'Estudar CSS', 'Estudar JS']
+        const tarefas = ['Estudar...']
         
         function add() {
             const input = document.querySelector("input")
