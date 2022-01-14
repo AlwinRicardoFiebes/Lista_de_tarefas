@@ -4,105 +4,85 @@
    
     <title>Lista de Tarefas</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-   * {
-       box-sizing: border-box;
-       margin: 0;
-   } 
-
-   body {
-    border: 10px solid red;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    font-family: Arial, Helvetica, sans-serif;
-    background: red;
-   }
-   
-   header {
-       color: rgb(255, 142, 142);
-       text-align: center;
-       text-shadow: 3px 3px black;
-   }
-
-   main {
-      flex: auto;
-      background: rgb(255, 142, 142);
-      padding: 20px;
-      border-radius: 8px;
-      }
-
-    main ul {
-        padding: 0;
-        list-style: none; 
+    
+    <style>* {
+        box-sizing: border-box;
+        margin: 0;
+    } 
+    
+    body {
+     border: 10px solid red;
+     min-height: 100vh;
+     display: flex;
+     flex-direction: column;
+     font-family: Arial, Helvetica, sans-serif;
+     background: red;
     }
-
-    main li {
-        box-shadow: 5px 5px ;
-        padding: 5px;
-        font-size: larger;
-        background: red;
-        border-radius: 5px;
-        margin-top: 8px;
-        
+    
+    header {
+        color: rgb(255, 142, 142);
+        text-align: center;
+        text-shadow: 3px 3px black;
     }
+    
+    main {
+       flex: auto;
+       background: rgb(255, 142, 142);
+       padding: 20px;
+       border-radius: 8px;
+       }
+    
+     main ul {
+         padding: 0;
+         list-style: none; 
+     }
+    
+     main li {
+         box-shadow: 5px 5px ;
+         padding: 5px;
+         font-size: larger;
+         background: red;
+         border-radius: 5px;
+         margin-top: 8px;
+         
+     }
+    
+     footer {
+         display: flex;
+         padding-top: 5px;
+     }
+    
+     footer input {
+         flex: auto;
+         padding: 5px;
+         border-radius: 8px;
+         outline: none;
+     }
+    
+     footer button {
+         border-radius: 8px;
+     }
+     
+     </style>
 
-    footer {
-        display: flex;
-        padding-top: 5px;
-    }
-
-    footer input {
-        flex: auto;
-        padding: 5px;
-        border-radius: 8px;
-        outline: none;
-    }
-
-    footer button {
-        border-radius: 8px;
-    }
-
-</style>
 </head>
 
 <body>
+   
     <header>
     <h1>Tarefas</h1>
     </header>
     <main>
-    <ul></ul>
+    <ul></ul> 
     </main>
     <footer>
     <input placeholder="Adicionar Tarefa">
     <button onclick="add()">adicionar</button>
-    <button style="font-size:24px"><i class="fa fa-trash"></i></button>
+    <button onclick="del()" style="font-size:24px"><i class="fa fa-trash"></i></button>
     </footer>
-    <script>
+    
+    <script src="main.js"></script>
 
-        const tarefas = ['Estudar...']
-        
-        function add() {
-            const input = document.querySelector("input")
-            const tarefa = input.value
-            tarefas.push(tarefa)
-            input.value = ""
-            render()
-        }
-
-        function render() {
-            const ul = document.querySelector("ul")
-            ul.innerHTML = null
-
-            tarefas.forEach(function (tarefa) {
-                const li = document.createElement("li")
-                li.innerText = tarefa
-                ul.appendChild(li)
-            })
-        }
-            
-        render()
-    </script>
 </body>
 
 </html>
